@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Booster Officiel</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chris Booster</title>
 <style>
-body{font-family:Arial;background:#eef2f7;margin:0;padding-bottom:80px}
-header{background:#0084FF;color:white;padding:20px;text-align:center;position:relative}
-.admin-btn{position:absolute;top:10px;right:10px;background:black;color:white;border:none;padding:8px 12px;border-radius:20px;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;padding:15px;max-width:1100px;margin:auto}
-.card{background:white;border-radius:14px;padding:15px;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,0.1)}
-.card img{width:40px;height:40px}
-.price{font-weight:bold;color:#0084FF;font-size:20px;margin:8px 0}
-button.buy{background:#25D366;color:white;border:none;padding:10px;width:100%;border-radius:8px;font-weight:bold}
-h2{font-size:18px;margin:25px 0 5px 15px}
-#adminPanel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999;overflow:auto}
-.admin-box{background:white;margin:20px auto;padding:20px;border-radius:10px;max-width:400px}
-.admin-box input{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:5px}
+body{font-family:Arial;background:#f0f2f5;margin:0}
+header{background:#0084FF;color:white;padding:20px;text-align:center}
+h2{background:#333;color:white;padding:10px;margin:20px 0 0 0}
+.box{background:white;margin:10px;padding:15px;border-radius:10px;text-align:center;box-shadow:0 2px 5px #ccc}
+.prix{color:#0084FF;font-weight:bold;font-size:22px;margin:10px}
+.btn{ display:block; background:#25D366; color:white; padding:15px; text-decoration:none; border-radius:8px; font-weight:bold; margin-top:10px; font-size:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.depot{background:#fff3cd;border:2px solid #ffc107;padding:15px;margin:10px;border-radius:10px}
 </style>
 </head>
 <body>
-<header>
-<button class="admin-btn" onclick="openAdmin()">⚙️ Paramètres</button>
-<h1>🚀 CHRIS BOOSTER</h1><p>Prix en FC - Lubumbashi</p>
-</header>
+<header><h1>🚀 CHRIS BOOSTER</h1><p>Lubumbashi - WhatsApp: 0981100302</p></header>
+
+<div class="depot">
+<h3>💰 MODE DE PAIEMENT / DÉPÔT</h3>
+<p>📱 <b>Airtel Money:</b> +243 981100302</p>
+<p>📱 <b>M-Pesa:</b> +243 981100302</p>
+<p>📱 <b>Orange Money:</b> +243 981100302</p>
+<p>Paye d'abord, envoie la capture, on booste !</p>
+<a class="btn" style="background:#ff9800" href="https://wa.me/243981100302?text=Je veux payer par Airtel Money">💳 PAYER MAINTENANT</a>
+</div>
 
 <h2>👥 ABONNÉS</h2>
 <div class="grid">
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"><br>1K Abonnés<div class="price">2.000 FC</div><button class="buy" onclick="go('1K ABONNES')">Commander</button></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"><br>2K Abonnés<div class="price">4.000 FC</div><button class="buy" onclick="go('2K ABONNES')">Commander</button></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg"><br>5K Abonnés<div class="price">10.000 FC</div><button class="buy" onclick="go('5K ABONNES')">Commander</button></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"><br>10K Abonnés<div class="price">20.000 FC</div><button class="buy" onclick="go('10K ABONNES')">Commander</button></div>
+<div class="box">Facebook 1K<div class="prix">2.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K ABONNES 2000FC. Mon lien:">COMMANDER</a></div>
+<div class="box">Instagram 2K<div class="prix">4.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 2K ABONNES 4000FC. Mon lien:">COMMANDER</a></div>
+<div class="box"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" width="30"><br>TikTok 5K<div class="prix">10.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 5K ABONNES TIKTOK 10000FC. Mon lien:">COMMANDER</a></div>
+<div class="box">YouTube 10K<div class="prix">20.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K ABONNES YOUTUBE 20000FC. Mon lien:">COMMANDER</a></div>
 </div>
 
 <h2>❤️ J'AIME</h2>
 <div class="grid">
-<div class="card">1K J'aime<div class="price">1.500 FC</div><button class="buy" onclick="go('1K JAIME')">Commander</button></div>
-<div class="card">2K J'aime<div class="price">3.000 FC</div><button class="buy" onclick="go('2K JAIME')">Commander</button></div>
-<div class="card">10K J'aime<div class="price">16.000 FC</div><button class="buy" onclick="go('10K JAIME')">Commander</button></div>
+<div class="box">1K J'aime<div class="prix">1.500 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K JAIME 1500FC">COMMANDER</a></div>
+<div class="box">10K J'aime<div class="prix">16.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K JAIME 16000FC">COMMANDER</a></div>
 </div>
 
 <h2>💬 COMMENTAIRES</h2>
 <div class="grid">
-<div class="card">1K Commentaires<div class="price">1.000 FC</div><button class="buy" onclick="go('1K COMMENTAIRES')">Commander</button></div>
-<div class="card">2K Commentaires<div class="price">2.000 FC</div><button class="buy" onclick="go('2K COMMENTAIRES')">Commander</button></div>
-<div class="card">5K Commentaires<div class="price">5.000 FC</div><button class="buy" onclick="go('5K COMMENTAIRES')">Commander</button></div>
-<div class="card">10K Commentaires<div class="price">10.000 FC</div><button class="buy" onclick="go('10K COMMENTAIRES')">Commander</button></div>
+<div class="box">1K Commentaires<div class="prix">1.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K COMMENTAIRES 1000FC">COMMANDER</a></div>
+<div class="box">10K Commentaires<div class="prix">10.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K COMMENTAIRES 10000FC">COMMANDER</a></div>
 </div>
 
 <h2>👁️ VUES</h2>
 <div class="grid">
-<div class="card">1K Vues<div class="price">1.500 FC</div><button class="buy" onclick="go('1K VUES')">Commander</button></div>
-<div class="card">2K Vues<div class="price">3.000 FC</div><button class="buy" onclick="go('2K VUES')">Commander</button></div>
-<div class="card">5K Vues<div class="price">8.000 FC</div><button class="buy" onclick="go('5K VUES
+<div class="box">1K Vues<div class="prix">1.500 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K VUES 1500FC">COMMANDER</a></div>
+<div class="box">14K Vues<div class="prix">20.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 14K VUES 20000FC">COMMANDER</a></div>
+</div>
+
+</body>
+</html>
