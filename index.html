@@ -3,36 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Booster - Prix Officiels</title>
+<title>Chris Booster Officiel</title>
 <style>
-body{font-family:Arial;background:#f4f6f9;margin:0}
-header{background:linear-gradient(135deg,#0084FF,#25D366);color:white;padding:25px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;padding:20px;max-width:1200px;margin:auto}
-.card{background:white;border-radius:16px;padding:20px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);border-top:4px solid #0084FF}
-.card img{width:50px;height:50px;object-fit:contain;margin-bottom:8px}
-.price{font-size:23px;font-weight:bold;color:#0084FF;margin:10px 0}
-button{background:#25D366;color:white;border:none;padding:12px;width:100%;border-radius:10px;font-weight:bold;cursor:pointer}
-h2{color:#0084FF;margin:0}
-.section-title{max-width:1200px;margin:35px auto 0;padding:10px 20px;background:white;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-.whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none}
+body{font-family:Arial;background:#eef2f7;margin:0;padding-bottom:80px}
+header{background:#0084FF;color:white;padding:20px;text-align:center;position:relative}
+.admin-btn{position:absolute;top:10px;right:10px;background:black;color:white;border:none;padding:8px 12px;border-radius:20px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;padding:15px;max-width:1100px;margin:auto}
+.card{background:white;border-radius:14px;padding:15px;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,0.1)}
+.card img{width:40px;height:40px}
+.price{font-weight:bold;color:#0084FF;font-size:20px;margin:8px 0}
+button.buy{background:#25D366;color:white;border:none;padding:10px;width:100%;border-radius:8px;font-weight:bold}
+h2{font-size:18px;margin:25px 0 5px 15px}
+#adminPanel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999;overflow:auto}
+.admin-box{background:white;margin:20px auto;padding:20px;border-radius:10px;max-width:400px}
+.admin-box input{width:100%;padding:10px;margin:5px 0;border:1px solid #ccc;border-radius:5px}
 </style>
 </head>
 <body>
 <header>
-<h1>🚀 CHRIS BOOSTER</h1>
-<p>Meilleurs prix Lubumbashi - Tous réseaux</p>
+<button class="admin-btn" onclick="openAdmin()">⚙️ Paramètres</button>
+<h1>🚀 CHRIS BOOSTER</h1><p>Prix en FC - Lubumbashi</p>
 </header>
 
-<div class="section-title"><h2>👥 ABONNÉS - 2000FC / 4000FC / 10000FC / 20000FC</h2></div>
+<h2>👥 ABONNÉS</h2>
 <div class="grid">
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"><h3>1K Abonnés</h3><div class="price">2.000 FC</div><button onclick="commander('1K Abonnés 2000FC')">Commander</button></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"><h3>2K Abonnés</h3><div class="price">4.000 FC</div><button onclick="commander('2K Abonnés 4000FC')">Commander</button></div>
-<div class="card"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-7336356_1280.png"><h3>5K Abonnés</h3><div class="price">10.000 FC</div><button onclick="commander('5K Abonnés 10000FC')">Commander</button></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg"><h3>10K Abonnés</h3><div class="price">20.000 FC</div><button onclick="commander('10K Abonnés 20000FC')">Commander</button></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"><br>1K Abonnés<div class="price">2.000 FC</div><button class="buy" onclick="go('1K ABONNES')">Commander</button></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"><br>2K Abonnés<div class="price">4.000 FC</div><button class="buy" onclick="go('2K ABONNES')">Commander</button></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg"><br>5K Abonnés<div class="price">10.000 FC</div><button class="buy" onclick="go('5K ABONNES')">Commander</button></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"><br>10K Abonnés<div class="price">20.000 FC</div><button class="buy" onclick="go('10K ABONNES')">Commander</button></div>
 </div>
 
-<div class="section-title"><h2>❤️ J'AIME - 1500FC / 3000FC / 4500FC / 8000FC / 16000FC</h2></div>
+<h2>❤️ J'AIME</h2>
 <div class="grid">
-<div class="card" style="border-top-color:#ff3040"><h3>1K J'aime</h3><div class="price">1.500 FC</div><button onclick="commander('1K J\'aime 1500FC')">Commander</button></div>
-<div class="card" style="border-top-color:#ff3040"><h3>2K J'aime</h3><div class="price">3.000 FC</div><button onclick="commander('2K J\'aime 3000FC')">Commander</button></div>
-<div class="card" style="border-top-color:#ff3040"><h3>3K J'aime</h3><div class="price">4.500 FC</div><button onclick="commander('3K J\'aime 
+<div class="card">1K J'aime<div class="price">1.500 FC</div><button class="buy" onclick="go('1K JAIME')">Commander</button></div>
+<div class="card">2K J'aime<div class="price">3.000 FC</div><button class="buy" onclick="go('2K JAIME')">Commander</button></div>
+<div class="card">10K J'aime<div class="price">16.000 FC</div><button class="buy" onclick="go('10K JAIME')">Commander</button></div>
+</div>
+
+<h2>💬 COMMENTAIRES</h2>
+<div class="grid">
+<div class="card">1K Commentaires<div class="price">1.000 FC</div><button class="buy" onclick="go('1K COMMENTAIRES')">Commander</button></div>
+<div class="card">2K Commentaires<div class="price">2.000 FC</div><button class="buy" onclick="go('2K COMMENTAIRES')">Commander</button></div>
+<div class="card">5K Commentaires<div class="price">5.000 FC</div><button class="buy" onclick="go('5K COMMENTAIRES')">Commander</button></div>
+<div class="card">10K Commentaires<div class="price">10.000 FC</div><button class="buy" onclick="go('10K COMMENTAIRES')">Commander</button></div>
+</div>
+
+<h2>👁️ VUES</h2>
+<div class="grid">
+<div class="card">1K Vues<div class="price">1.500 FC</div><button class="buy" onclick="go('1K VUES')">Commander</button></div>
+<div class="card">2K Vues<div class="price">3.000 FC</div><button class="buy" onclick="go('2K VUES')">Commander</button></div>
+<div class="card">5K Vues<div class="price">8.000 FC</div><button class="buy" onclick="go('5K VUES
