@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chris Booster</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chris Booster Auto - Dépôt d'abord</title>
 <style>
-body{font-family:Arial;background:#f0f2f5;margin:0}
-header{background:#0084FF;color:white;padding:20px;text-align:center}
-h2{background:#333;color:white;padding:10px;margin:20px 0 0 0}
-.box{background:white;margin:10px;padding:15px;border-radius:10px;text-align:center;box-shadow:0 2px 5px #ccc}
-.prix{color:#0084FF;font-weight:bold;font-size:22px;margin:10px}
-.btn{ display:block; background:#25D366; color:white; padding:15px; text-decoration:none; border-radius:8px; font-weight:bold; margin-top:10px; font-size:18px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
-.depot{background:#fff3cd;border:2px solid #ffc107;padding:15px;margin:10px;border-radius:10px}
+body{font-family:Arial;background:#0f172a;color:white;margin:0;text-align:center}
+header{background:linear-gradient(90deg,#0084FF,#00d2ff);padding:25px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px;max-width:800px;margin:auto}
+.card{background:#1e293b;border-radius:15px;padding:15px}
+.prix{color:#22c55e;font-size:22px;font-weight:bold}
+.btn{width:100%;padding:12px;background:#22c55e;color:white;border:none;border-radius:8px;font-weight:bold;cursor:pointer}
+h2{color:#38bdf8}
+#popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:999;justify-content:center;align-items:center}
+.box{background:white;color:black;padding:20px;border-radius:15px;width:90%;max-width:400px}
+input{width:90%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
+#bar{width:0%;height:20px;background:#22c55e;border-radius:10px;transition:0.5s}
 </style>
 </head>
 <body>
-<header><h1>🚀 CHRIS BOOSTER</h1><p>Lubumbashi - WhatsApp: 0981100302</p></header>
-
-<div class="depot">
-<h3>💰 MODE DE PAIEMENT / DÉPÔT</h3>
-<p>📱 <b>Airtel Money:</b> +243 981100302</p>
-<p>📱 <b>M-Pesa:</b> +243 981100302</p>
-<p>📱 <b>Orange Money:</b> +243 981100302</p>
-<p>Paye d'abord, envoie la capture, on booste !</p>
-<a class="btn" style="background:#ff9800" href="https://wa.me/243981100302?text=Je veux payer par Airtel Money">💳 PAYER MAINTENANT</a>
-</div>
+<header><h1>🚀 CHRIS BOOSTER AUTO</h1><p>💰 Dépôt d'abord → ⚡ Boost automatique</p></header>
 
 <h2>👥 ABONNÉS</h2>
 <div class="grid">
-<div class="box">Facebook 1K<div class="prix">2.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K ABONNES 2000FC. Mon lien:">COMMANDER</a></div>
-<div class="box">Instagram 2K<div class="prix">4.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 2K ABONNES 4000FC. Mon lien:">COMMANDER</a></div>
-<div class="box"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" width="30"><br>TikTok 5K<div class="prix">10.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 5K ABONNES TIKTOK 10000FC. Mon lien:">COMMANDER</a></div>
-<div class="box">YouTube 10K<div class="prix">20.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K ABONNES YOUTUBE 20000FC. Mon lien:">COMMANDER</a></div>
+<div class="card">FB 1K<div class="prix">2.000 FC</div><button class="btn" onclick="depot('1K ABONNES FB',2000)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">TikTok 5K<div class="prix">10.000 FC</div><button class="btn" onclick="depot('5K ABONNES TIKTOK',10000)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">Insta 2K<div class="prix">4.000 FC</div><button class="btn" onclick="depot('2K ABONNES INSTA',4000)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">YT 10K<div class="prix">20.000 FC</div><button class="btn" onclick="depot('10K ABONNES YT',20000)">💰 DÉPOSER & BOOSTER</button></div>
 </div>
 
-<h2>❤️ J'AIME</h2>
+<h2>❤️ J'AIME / 💬 COMMENTAIRES / 👁️ VUES</h2>
 <div class="grid">
-<div class="box">1K J'aime<div class="prix">1.500 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K JAIME 1500FC">COMMANDER</a></div>
-<div class="box">10K J'aime<div class="prix">16.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K JAIME 16000FC">COMMANDER</a></div>
+<div class="card">1K J'aime<div class="prix">1.500 FC</div><button class="btn" onclick="depot('1K JAIME',1500)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">1K Commentaires<div class="prix">1.000 FC</div><button class="btn" onclick="depot('1K COMMENTAIRES',1000)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">1K Vues<div class="prix">1.500 FC</div><button class="btn" onclick="depot('1K VUES',1500)">💰 DÉPOSER & BOOSTER</button></div>
+<div class="card">14K Vues<div class="prix">20.000 FC</div><button class="btn" onclick="depot('14K VUES',20000)">💰 DÉPOSER & BOOSTER</button></div>
 </div>
 
-<h2>💬 COMMENTAIRES</h2>
-<div class="grid">
-<div class="box">1K Commentaires<div class="prix">1.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K COMMENTAIRES 1000FC">COMMANDER</a></div>
-<div class="box">10K Commentaires<div class="prix">10.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 10K COMMENTAIRES 10000FC">COMMANDER</a></div>
+<div id="popup">
+<!-- ETAPE 1: DEPOT -->
+<div class="box" id="s1">
+<h3 id="titre">Dépôt</h3>
+<div style="background:#fff3cd;padding:12px;border-radius:8px;text-align:left">
+<p>💳 <b>Étape 1: Fais le dépôt</b></p>
+<p>📱 Airtel Money: <b>0981100302</b></p>
+<p>📱 M-Pesa: <b>0981100302</b></p>
+<p>Montant à payer: <b id="montant" style="color:green;font-size:20px"></b></p>
+<p>Nom: Chris Booster</p>
 </div>
-
-<h2>👁️ VUES</h2>
-<div class="grid">
-<div class="box">1K Vues<div class="prix">1.500 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 1K VUES 1500FC">COMMANDER</a></div>
-<div class="box">14K Vues<div class="prix">20.000 FC</div><a class="btn" href="https://wa.me/243981100302?text=Je veux 14K VUES 20000FC">COMMANDER</a></div>
-</div>
-
-</body>
-</html>
+<input id="codeTrans" placeholder="Code transaction Airtel Money (ex: 1234567890)">
+<input id="lien" placeholder="Ton lien Facebook/TikTok/Insta">
+<button class="btn" style="background:#0084FF" onclick="verifDepot()">✅ J'AI PAYÉ, LANCER LE BOOST</button>
+<button
