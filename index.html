@@ -1,1 +1,102 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NEW</title><style>body{font-family:Arial;background:#0f172a;color:white;margin:0;text-align:center}header{background:linear-gradient(90deg,#0084FF,#00d2ff);padding:25px}.card{background:#1e293b;border-radius:15px;padding:15px;margin:10px}.prix{color:#22c55e;font-size:22px}.btn{width:100%;padding:12px;background:#22c55e;color:white;border:none;border-radius:8px}</style></head><body><header><h1>🚀 CHRIS BOOSTER AUTO - DEPOT D'ABORD</h1><p>NOUVEAU SITE 2024</p></header><div class="card">TEST - Si tu vois ça, le nouveau site marche !<div class="prix">2.000 FC</div><button class="btn">💰 DEPOSER & BOOSTER</button></div></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Booster</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0f172a;color:white}
+header{background:linear-gradient(90deg,#0084FF,#7c3aed);padding:20px;text-align:center}
+.card{background:#1e293b;margin:12px;border-radius:16px;padding:16px;border:1px solid #334155}
+.platform{display:flex;gap:8px;margin:10px 0}
+.p-btn{flex:1;padding:10px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:white;cursor:pointer;font-weight:bold}
+.p-btn.active{background:#0084FF;border-color:#0084FF}
+.service{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.s-btn{padding:12px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:white;cursor:pointer}
+.s-btn.active{background:#22c55e;border-color:#22c55e}
+label{font-size:13px;color:#94a3b8;margin-top:10px;display:block;text-align:left}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:white;margin-top:5px}
+.price-box{background:#0f172a;border:1px dashed #22c55e;border-radius:12px;padding:12px;margin:12px 0;text-align:center}
+.price{font-size:28px;color:#22c55e;font-weight:bold}
+.btn-pay{width:100%;padding:16px;background:linear-gradient(90deg,#22c55e,#16a34a);border:none;border-radius:12px;color:white;font-size:18px;font-weight:bold;cursor:pointer;margin-top:10px}
+.info{background:#1e3a5f;border-radius:10px;padding:10px;font-size:12px;margin:10px 0;text-align:left}
+.bar{height:8px;background:#334155;border-radius:10px;overflow:hidden;margin:10px 0;display:none}
+.bar-fill{height:100%;width:0%;background:#22c55e;transition:width 0.3s}
+.log{font-size:11px;color:#94a3b8;text-align:left}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 CHRIS BOOSTER</h1>
+<p style="font-size:12px;opacity:0.8">TikTok • Facebook • Instagram • YouTube</p>
+</header>
+
+<div class="card">
+<b>1. Plateforme</b>
+<div class="platform">
+<button class="p-btn active" onclick="setPlat(this,'TikTok')">TikTok</button>
+<button class="p-btn" onclick="setPlat(this,'Facebook')">Facebook</button>
+<button class="p-btn" onclick="setPlat(this,'Instagram')">Insta</button>
+<button class="p-btn" onclick="setPlat(this,'YouTube')">YouTube</button>
+</div>
+
+<b>2. Service</b>
+<div class="service">
+<button class="s-btn active" onclick="setServ(this,'Vues','1000 Vues','2000')">👁️ Vues</button>
+<button class="s-btn" onclick="setServ(this,'Likes','1000 J\'aime','3500')">❤️ J'aime</button>
+<button class="s-btn" onclick="setServ(this,'Commentaires','100 Commentaires','5000')">💬 Comms</button>
+<button class="s-btn" onclick="setServ(this,'Abonnés','1000 Abonnés','8000')">👥 Abonnés</button>
+</div>
+
+<label>Lien de ta publication / profil</label>
+<input id="lien" placeholder="Colle ton lien ici">
+
+<label>Quantité</label>
+<select id="qte" onchange="calc()">
+<option value="1">1000</option>
+<option value="2">2000</option>
+<option value="5">5000</option>
+<option value="10">10000</option>
+</select>
+
+<div class="price-box">
+<div id="detail" style="font-size:13px;color:#94a3b8">1000 Vues TikTok</div>
+<div class="price" id="prix">2.000 FC</div>
+<div style="font-size:11px;color:#94a3b8">Airtel Money: 0981100302</div>
+</div>
+
+<label>Code Transaction après paiement</label>
+<input id="code" placeholder="Ex: 1234567890">
+
+<div class="info">
+<b>📲 Comment payer :</b><br>
+1. Envoie <b id="prix2">2.000 FC</b> sur Airtel Money <b>0981100302</b><br>
+2. Copie le code reçu<br>
+3. Colle le code et lance
+</div>
+
+<button class="btn-pay" id="btn" onclick="lancer()">💰 PAYER & BOOSTER</button>
+<div class="bar" id="bar"><div class="bar-fill" id="fill"></div></div>
+<div class="log" id="log"></div>
+</div>
+
+<script>
+let plat='TikTok', serv='Vues', servLabel='1000 Vues', base=2000;
+function setPlat(el,p){plat=p;document.querySelectorAll('.p-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
+function setServ(el,s,label,price){serv=s;servLabel=label;base=parseInt(price);document.querySelectorAll('.s-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
+function calc(){let mult=parseInt(document.getElementById('qte').value);let total=base*mult;document.getElementById('prix').innerText=total.toLocaleString()+' FC';document.getElementById('prix2').innerText=total.toLocaleString()+' FC';document.getElementById('detail').innerText=document.getElementById('qte').value*1000+' '+serv+' '+plat;}
+function lancer(){
+let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;
+if(lien.length<8){alert('Mets ton lien !');return;}
+if(code.length<5){alert('Mets le code Airtel Money !');return;}
+let btn=document.getElementById('btn');btn.disabled=true;btn.innerText='Vérification...';
+let bar=document.getElementById('bar');bar.style.display='block';
+let log=document.getElementById('log');log.innerHTML='';
+let steps=['Vérification du dépôt...','Dépôt reçu ✅','Lien vérifié ✅','Lancement du boost...','Boost en cours...','Boost lancé avec succès ! 🎉'];
+let p=0;let inter=setInterval(()=>{if(p<steps.length){document.getElementById('fill').style.width=((p+1)/steps.length*100)+'%';log.innerHTML+='<div>'+steps[p]+'</div>';p++;}else{clearInterval(inter);btn.innerText='✅ BOOST LANCE !';let msg=`COMMANDE%0A${plat} ${serv}%0A${document.getElementById('detail').innerText}%0A${document.getElementById('prix').innerText}%0ALien: ${lien}%0ACode: ${code}`;window.open('https://wa.me/243981100302?text='+msg,'_blank');}},800);
+}
+calc();
+</script>
+</body>
+  </html>
