@@ -1,75 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Booster - Comme Exo</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f5f7fb;color:#111}
-header{background:white;padding:15px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-header h1{color:#0084FF;font-size:22px}
-.box{background:white;margin:15px;border-radius:15px;padding:15px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
-.g-btn{padding:12px 5px;border:2px solid #eee;border-radius:12px;background:white;text-align:center;cursor:pointer;font-size:12px;font-weight:bold}
-.g-btn.active{border-color:#0084FF;background:#eef6ff;color:#0084FF}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.s-btn{padding:15px;border:2px solid #eee;border-radius:12px;background:white;cursor:pointer;text-align:center}
-.s-btn.active{border-color:#22c55e;background:#f0fdf4}
-.s-btn b{display:block;font-size:14px}
-.s-btn span{font-size:11px;color:#666}
-input{width:100%;padding:14px;border:2px solid #eee;border-radius:12px;margin-top:10px;font-size:14px}
-.price{text-align:center;padding:15px}
-.price b{font-size:32px;color:#111}
-.price div{color:#22c55e;font-weight:bold}
-.btn{width:100%;padding:16px;background:#111;color:white;border:none;border-radius:14px;font-size:16px;font-weight:bold;margin-top:10px}
-.btn.ok{background:#22c55e}
-.small{font-size:11px;color:#888;text-align:center;margin-top:8px}
-</style>
-</head>
-<body>
-<header><h1>🚀 Chris Booster</h1><div style="font-size:11px;color:#666">Simple • Rapide • Comme Exo</div></header>
-
-<div class="box">
-<div style="font-weight:bold;margin-bottom:8px">Plateforme</div>
-<div class="grid4">
-<div class="g-btn active" onclick="plat(this,'TikTok')">TikTok</div>
-<div class="g-btn" onclick="plat(this,'Facebook')">FB</div>
-<div class="g-btn" onclick="plat(this,'Insta')">Insta</div>
-<div class="g-btn" onclick="plat(this,'YouTube')">YT</div>
-</div>
-
-<div style="font-weight:bold;margin:15px 0 8px 0">Service</div>
-<div class="grid2">
-<div class="s-btn active" onclick="serv(this,'Vues',2000)"><b>👁️ Vues</b><span>2.000 FC / 1k</span></div>
-<div class="s-btn" onclick="serv(this,'Likes',3500)"><b>❤️ Likes</b><span>3.500 FC / 1k</span></div>
-<div class="s-btn" onclick="serv(this,'Comms',5000)"><b>💬 Comms</b><span>5.000 FC / 100</span></div>
-<div class="s-btn" onclick="serv(this,'Abonnés',8000)"><b>👥 Abonnés</b><span>8.000 FC / 1k</span></div>
-</div>
-
-<input id="lien" placeholder="Lien de ta vidéo / profil" oninput="check()">
-<input id="qte" type="number" value="1000" min="100" step="100" placeholder="Quantité ex: 1000" oninput="calc()">
-
-<div class="price">
-<div id="detail" style="font-size:13px;color:#666">1000 Vues TikTok</div>
-<b id="prix">2.000 FC</b>
-<div>Airtel 0981100302</div>
-</div>
-
-<input id="code" placeholder="Code Airtel Money après paiement" oninput="check()">
-
-<button class="btn" id="btn" onclick="go()">Payer 2.000 FC sur 0981100302 d'abord</button>
-<div class="small">Paye d'abord, mets le code, on booste après vérification</div>
-</div>
-
-<script>
-let p='TikTok', s='Vues', base=2000, qty=1000;
-function plat(el,name){p=name;document.querySelectorAll('.g-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
-function serv(el,name,price){s=name;base=price;document.querySelectorAll('.s-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
-function calc(){qty=parseInt(document.getElementById('qte').value)||1000;let total=Math.round(base*qty/1000);document.getElementById('prix').innerText=total.toLocaleString()+' FC';document.getElementById('detail').innerText=qty+' '+s+' '+p;document.getElementById('btn').innerText='Payer '+total.toLocaleString()+' FC sur 0981100302 d\'abord';check();}
-function check(){let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;let btn=document.getElementById('btn');if(lien.length>8 && code.length>=8){btn.classList.add('ok');btn.innerText='✅ Commander '+document.getElementById('prix').innerText;return true;}else{btn.classList.remove('ok');return false;}}
-function go(){if(!check()){alert('1. Paye sur 0981100302\n2. Mets ton lien\n3. Mets le code');return;}let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;let msg=`COMMANDE CHRIS%0A${p} ${s}%0A${qty} - ${document.getElementById('prix').innerText}%0ALien: ${lien}%0ACode: ${code}`;window.open('https://wa.me/243981100302?text='+msg,'_blank');}
-calc();
-</script>
-</body>
-</html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Booster PRO</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}body{background:#f8fafc}header{background:#111827;color:white;padding:18px;text-align:center}.logo{font-size:20px;font-weight:900;letter-spacing:1px}.sub{font-size:11px;opacity:.6;margin-top:3px}main{max-width:480px;margin:auto;padding:12px}.card{background:white;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.1)}.t{font-weight:800;font-size:13px;margin-bottom:10px}.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}.g4 div{border:1.5px solid #e5e7eb;border-radius:10px;padding:10px 0;text-align:center;font-size:12px;font-weight:700;cursor:pointer}.g4 div.on{border-color:#111827;background:#111827;color:white}.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g2 div{border:1.5px solid #e5e7eb;border-radius:12px;padding:14px;text-align:center;cursor:pointer}.g2 div.on{border-color:#22c55e;background:#f0fdf4}.g2 b{display:block;font-size:14px}.g2 span{font-size:11px;color:#6b7280}input{width:100%;padding:13px;border:1.5px solid #e5e7eb;border-radius:10px;margin-top:10px;font-size:14px;outline:none}input:focus{border-color:#111827}.price{text-align:center;padding:18px;background:#f9fafb;border-radius:12px;margin-top:12px}.price .a{font-size:13px;color:#6b7280}.price .b{font-size:30px;font-weight:900;margin:5px 0}.price .c{background:#111827;color:white;display:inline-block;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700}.btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:900;font-size:15px;margin-top:12px;background:#e5e7eb;color:#9ca3af}.btn.ok{background:#111827;color:white;cursor:pointer}.foot{text-align:center;font-size:10px;color:#9ca3af;padding:10px}.secure{font-size:11px;color:#059669;background:#ecfdf5;padding:8px;border-radius:8px;text-align:center;margin-top:8px}</style></head>
+<body><header><div class="logo">CHRIS BOOSTER</div><div class="sub">PRO • SÉCURISÉ • VÉRIFICATION MANUELLE</div></header>
+<main>
+<div class="card"><div class="t">1 • PLATEFORME</div><div class="g4" id="plats"><div class="on" onclick="setP(this,'TikTok')">TikTok</div><div onclick="setP(this,'Facebook')">Facebook</div><div onclick="setP(this,'Instagram')">Instagram</div><div onclick="setP(this,'YouTube')">YouTube</div></div>
+<div class="t" style="margin-top:16px">2 • SERVICE</div><div class="g2" id="servs"><div class="on" onclick="setS(this,'Vues',2000)"><b>👁️ Vues</b><span>2.000 FC / 1k</span></div><div onclick="setS(this,'Likes',3500)"><b>❤️ Likes</b><span>3.500 FC / 1k</span></div><div onclick="setS(this,'Comms',5000)"><b>💬 Comms</b><span>5.000 FC / 100</span></div><div onclick="setS(this,'Abonnés',8000)"><b>👥 Abonnés</b><span>8.000 FC / 1k</span></div></div>
+<input id="lien" placeholder="Lien de la vidéo ou profil" oninput="chk()"><input id="qty" type="number" value="1000" min="100" step="100" oninput="calc()" placeholder="Quantité">
+<div class="price"><div class="a" id="detail">1000 Vues TikTok</div><div class="b" id="prix">2.000 FC</div><div class="c">Airtel Money 0981100302</div></div>
+<input id="code" placeholder="Code transaction Airtel (après paiement)" oninput="chk()"><div class="secure">🔒 Paiement d'abord obligatoire • Vérification par Chris avant boost</div>
+<button class="btn" id="btn" onclick="go()">Remplis les infos</button></div>
+<div class="foot">© 2026 Chris Booster PRO • Lubumbashi • Support WhatsApp 0981100302</div>
+</main>
+<script>let P='TikTok',S='Vues',B=2000,Q=1000;function setP(e,n){P=n;document.querySelectorAll('#plats div').forEach(d=>d.classList.remove('on'));e.classList.add('on');calc()}function setS(e,n,b){S=n;B=b;document.querySelectorAll('#servs div').forEach(d=>d.classList.remove('on'));e.classList.add('on');calc()}function calc(){Q=parseInt(document.getElementById('qty').value)||1000;let t=Math.round(B*Q/1000);document.getElementById('prix').innerText=t.toLocaleString()+' FC';document.getElementById('detail').innerText=Q+' '+S+' '+P;chk()}function chk(){let l=document.getElementById('lien').value;let c=document.getElementById('code').value;let btn=document.getElementById('btn');if(l.length>8 && c.length>=8 && Q>=100){btn.classList.add('ok');btn.innerText='✅ Commander - '+document.getElementById('prix').innerText;return true}else{btn.classList.remove('ok');btn.innerText='Remplis les infos';return false}}function go(){if(!chk()){alert('1. Colle ton lien\n2. Mets quantité\n3. Paye sur 0981100302\n4. Mets le code transaction');return}let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;let prix=document.getElementById('prix').innerText;let msg=`*NOUVELLE COMMANDE PRO*%0A%0A🚀 ${P} - ${S}%0A📦 ${Q} - ${prix}%0A🔗 Lien: ${lien}%0A💳 Code Airtel: ${code}%0A%0A_Vérifie ton Airtel Money ${prix} avant de booster_`;window.open('https://wa.me/243981100302?text='+msg,'_blank');document.getElementById('btn').innerText='✅ Envoyé - Attente vérification';}
+calc();</script></body></html>
