@@ -3,54 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Booster - Dépôt d'abord</title>
+<title>Chris Booster - Comme Exo</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0f172a;color:white}
-header{background:linear-gradient(90deg,#0084FF,#7c3aed);padding:20px;text-align:center}
-.card{background:#1e293b;margin:12px;border-radius:16px;padding:16px;border:1px solid #334155}
-.platform{display:flex;gap:8px;margin:10px 0}
-.p-btn{flex:1;padding:10px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:white;cursor:pointer;font-weight:bold}
-.p-btn.active{background:#0084FF;border-color:#0084FF}
-.service{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-.s-btn{padding:12px;border-radius:10px;border:1px solid #334155;background:#1e293b;color:white;cursor:pointer}
-.s-btn.active{background:#22c55e;border-color:#22c55e}
-label{font-size:13px;color:#94a3b8;margin-top:10px;display:block;text-align:left}
-input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:white;margin-top:5px}
-.price-box{background:#0f172a;border:2px solid #22c55e;border-radius:12px;padding:12px;margin:12px 0;text-align:center}
-.price{font-size:28px;color:#22c55e;font-weight:bold}
-.btn-pay{width:100%;padding:16px;background:#475569;border:none;border-radius:12px;color:white;font-size:16px;font-weight:bold;cursor:not-allowed;margin-top:10px;opacity:0.5}
-.btn-pay.ok{background:linear-gradient(90deg,#22c55e,#16a34a);cursor:pointer;opacity:1}
-.alert{background:#7f1d1d;border:1px solid #ef4444;border-radius:10px;padding:10px;font-size:12px;margin:10px 0;text-align:left;color:#fecaca}
-.alert-ok{background:#14532d;border:1px solid #22c55e;color:#bbf7d0}
-.bar{height:8px;background:#334155;border-radius:10px;overflow:hidden;margin:10px 0;display:none}
-.bar-fill{height:100%;width:0%;background:#22c55e;transition:width 0.3s}
+body{background:#f5f7fb;color:#111}
+header{background:white;padding:15px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+header h1{color:#0084FF;font-size:22px}
+.box{background:white;margin:15px;border-radius:15px;padding:15px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
+.g-btn{padding:12px 5px;border:2px solid #eee;border-radius:12px;background:white;text-align:center;cursor:pointer;font-size:12px;font-weight:bold}
+.g-btn.active{border-color:#0084FF;background:#eef6ff;color:#0084FF}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.s-btn{padding:15px;border:2px solid #eee;border-radius:12px;background:white;cursor:pointer;text-align:center}
+.s-btn.active{border-color:#22c55e;background:#f0fdf4}
+.s-btn b{display:block;font-size:14px}
+.s-btn span{font-size:11px;color:#666}
+input{width:100%;padding:14px;border:2px solid #eee;border-radius:12px;margin-top:10px;font-size:14px}
+.price{text-align:center;padding:15px}
+.price b{font-size:32px;color:#111}
+.price div{color:#22c55e;font-weight:bold}
+.btn{width:100%;padding:16px;background:#111;color:white;border:none;border-radius:14px;font-size:16px;font-weight:bold;margin-top:10px}
+.btn.ok{background:#22c55e}
+.small{font-size:11px;color:#888;text-align:center;margin-top:8px}
 </style>
 </head>
 <body>
-<header>
-<h1>🚀 CHRIS BOOSTER</h1>
-<p style="font-size:12px;opacity:0.8">Dépôt d'abord • Vérification avant boost</p>
-</header>
+<header><h1>🚀 Chris Booster</h1><div style="font-size:11px;color:#666">Simple • Rapide • Comme Exo</div></header>
 
-<div class="card">
-<b>1. Plateforme</b>
-<div class="platform">
-<button class="p-btn active" onclick="setPlat(this,'TikTok')">TikTok</button>
-<button class="p-btn" onclick="setPlat(this,'Facebook')">Facebook</button>
-<button class="p-btn" onclick="setPlat(this,'Instagram')">Insta</button>
-<button class="p-btn" onclick="setPlat(this,'YouTube')">YouTube</button>
+<div class="box">
+<div style="font-weight:bold;margin-bottom:8px">Plateforme</div>
+<div class="grid4">
+<div class="g-btn active" onclick="plat(this,'TikTok')">TikTok</div>
+<div class="g-btn" onclick="plat(this,'Facebook')">FB</div>
+<div class="g-btn" onclick="plat(this,'Insta')">Insta</div>
+<div class="g-btn" onclick="plat(this,'YouTube')">YT</div>
 </div>
 
-<b>2. Service</b>
-<div class="service">
-<button class="s-btn active" onclick="setServ(this,'Vues','1000 Vues','2000')">👁️ Vues</button>
-<button class="s-btn" onclick="setServ(this,'J-aime','1000 J-aime','3500')">❤️ J'aime</button>
-<button class="s-btn" onclick="setServ(this,'Commentaires','100 Comms','5000')">💬 Comms</button>
-<button class="s-btn" onclick="setServ(this,'Abonnes','1000 Abonnes','8000')">👥 Abonnés</button>
+<div style="font-weight:bold;margin:15px 0 8px 0">Service</div>
+<div class="grid2">
+<div class="s-btn active" onclick="serv(this,'Vues',2000)"><b>👁️ Vues</b><span>2.000 FC / 1k</span></div>
+<div class="s-btn" onclick="serv(this,'Likes',3500)"><b>❤️ Likes</b><span>3.500 FC / 1k</span></div>
+<div class="s-btn" onclick="serv(this,'Comms',5000)"><b>💬 Comms</b><span>5.000 FC / 100</span></div>
+<div class="s-btn" onclick="serv(this,'Abonnés',8000)"><b>👥 Abonnés</b><span>8.000 FC / 1k</span></div>
 </div>
 
-<label>Lien de ta publication / profil *</label>
-<input id="lien" placeholder="Colle ton lien TikTok/FB/Insta/YouTube" oninput="check()">
+<input id="lien" placeholder="Lien de ta vidéo / profil" oninput="check()">
+<input id="qte" type="number" value="1000" min="100" step="100" placeholder="Quantité ex: 1000" oninput="calc()">
 
-<label>Quantité</
+<div class="price">
+<div id="detail" style="font-size:13px;color:#666">1000 Vues TikTok</div>
+<b id="prix">2.000 FC</b>
+<div>Airtel 0981100302</div>
+</div>
+
+<input id="code" placeholder="Code Airtel Money après paiement" oninput="check()">
+
+<button class="btn" id="btn" onclick="go()">Payer 2.000 FC sur 0981100302 d'abord</button>
+<div class="small">Paye d'abord, mets le code, on booste après vérification</div>
+</div>
+
+<script>
+let p='TikTok', s='Vues', base=2000, qty=1000;
+function plat(el,name){p=name;document.querySelectorAll('.g-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
+function serv(el,name,price){s=name;base=price;document.querySelectorAll('.s-btn').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
+function calc(){qty=parseInt(document.getElementById('qte').value)||1000;let total=Math.round(base*qty/1000);document.getElementById('prix').innerText=total.toLocaleString()+' FC';document.getElementById('detail').innerText=qty+' '+s+' '+p;document.getElementById('btn').innerText='Payer '+total.toLocaleString()+' FC sur 0981100302 d\'abord';check();}
+function check(){let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;let btn=document.getElementById('btn');if(lien.length>8 && code.length>=8){btn.classList.add('ok');btn.innerText='✅ Commander '+document.getElementById('prix').innerText;return true;}else{btn.classList.remove('ok');return false;}}
+function go(){if(!check()){alert('1. Paye sur 0981100302\n2. Mets ton lien\n3. Mets le code');return;}let lien=document.getElementById('lien').value;let code=document.getElementById('code').value;let msg=`COMMANDE CHRIS%0A${p} ${s}%0A${qty} - ${document.getElementById('prix').innerText}%0ALien: ${lien}%0ACode: ${code}`;window.open('https://wa.me/243981100302?text='+msg,'_blank');}
+calc();
+</script>
+</body>
+</html>
